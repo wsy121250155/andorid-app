@@ -1,0 +1,28 @@
+package com.example.androidapp;
+
+import android.app.TabActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.widget.TabHost;
+
+@SuppressWarnings("deprecation")
+public class MyTabActivity extends TabActivity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_tab);
+
+		// 获得当前TabActivity的TabHost
+//		TabHost tabHost = getTabHost();
+//
+//		LayoutInflater.from(this).inflate(R.layout.activity_tab,
+//				tabHost.getTabContentView(), true);
+//
+//		tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("主页")
+//				.setContent(R.id.tab1));
+//		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("标题")
+//				.setContent(R.id.tab2));
+//		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("简介")
+//				.setContent(R.id.tab3));
+	}
+}
