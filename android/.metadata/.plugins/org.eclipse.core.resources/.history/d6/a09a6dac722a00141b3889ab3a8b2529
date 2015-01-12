@@ -1,7 +1,0 @@
-package com.example.androidapp;
-
-import android.app.TabActivity;
-
-public class MyTabActivity extends TabActivity {
-
-}
