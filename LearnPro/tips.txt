@@ -1,0 +1,17 @@
+1.
+import android.app.ListFragment; 这个包中的内容好像跑不起来，直接报错就。
+然而这个函数getFragmentManager().beginTransaction().replace中的第二个参数又要求是
+android.app.Fragment的子类，怎么办？
+getSupportFragmentManager()...
+
+2.通过findViewById获得不存在的资源时，会直接崩溃。
+
+3.fragmentTransaction.add(R.id.LinearLayout1, newFragment);是有用的，会在layout后面加上一个
+fragment；
+但是fragmentTransaction.remove(foreFragment);就完全没有移除。
+
+*********************************************
+3.getSupportFragmentManager().beginTransaction().replace()
+只是将第一个参数代表的元素（layout/fragment）删除，并没有将它的子元素递归删除。
+
+*********************************************

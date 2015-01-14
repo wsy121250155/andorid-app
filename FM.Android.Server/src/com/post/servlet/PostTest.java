@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONObject;
+import net.sf.json.JSONArray;
 
 /**
  * Servlet implementation class PostTest
@@ -47,10 +47,17 @@ public class PostTest extends HttpServlet {
 		System.out.println("receive post request");
 		// String[] strArray = { "head", "body", "tail" };
 		// JSONArray jsonArray = JSONArray.fromObject(strArray);
-		String str = "{\"chinese\":\"88\",\"math\":\"78\",\"computer\":\"99\"}";
-		JSONObject jsonObject = JSONObject.fromObject(str);
+		String name=request.getParameter("name");
+		String pw=request.getParameter("pw");
+		System.out.println("name: "+name+"; pw: "+pw);
+		
 		PrintWriter out = response.getWriter();
-		out.println(jsonObject.toString());
-		// out.println(jsonArray.toString());
+		
+//		String str = "{\"chinese\":\"88\",\"math\":\"78\",\"computer\":\"99\"}";
+//		JSONObject jsonObject = JSONObject.fromObject(str);
+//		out.println(jsonObject.toString());
+		String[] object={"chinese","math"};
+		JSONArray jsonArray=JSONArray.fromObject(object);
+		out.println(jsonArray.toString());
 	}
 }
