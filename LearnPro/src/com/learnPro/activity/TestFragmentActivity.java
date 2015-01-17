@@ -7,34 +7,32 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class TestFragmentActivity extends ActionBarActivity implements
 		Callbacks {
-	private int count = 0;
-	private TextView textView1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test_fragment);
-		Button bu = (Button) findViewById(R.id.bu);
-		textView1 = (TextView) findViewById(R.id.textView1);
-		// foreFragment = (TestFragment) getSupportFragmentManager()
-		// .findFragmentById(R.id.testFragment);
-		bu.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				textView1.setText("times: " + count);
-				count++;
-			}
-		});
 	}
+	
+		@Override
+		public void onItemSelected(Integer id) {
+			// TODO Auto-generated method stub
+			// 创建一个新的fragment
+			Bundle bundle = new Bundle();
+			bundle.putInt("data", 1);
+			TestFragment newFragment = new TestFragment();
+			newFragment.setArguments(bundle);
+
+			android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+					.beginTransaction();
+			
+//			fragmentTransaction.add(R.id.book_detail_container, newFragment);
+			 fragmentTransaction.replace(R.id.book_detail_container, newFragment);
+			fragmentTransaction.commit();
+		}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -53,33 +51,5 @@ public class TestFragmentActivity extends ActionBarActivity implements
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	// private TestFragment foreFragment;
-
-	@Override
-	public void onItemSelected(Integer id) {
-		// TODO Auto-generated method stub
-		// 创建一个新的fragment
-		Bundle bundle = new Bundle();
-		bundle.putInt("data", 1);
-		TestFragment newFragment = new TestFragment();
-
-		newFragment.setArguments(bundle);
-		// foreFragment = (TestFragment) getSupportFragmentManager()
-		// .findFragmentById(R.id.testFragment);
-
-		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager()
-				.beginTransaction();
-		// 没起作用
-		// if (null != foreFragment) {
-		// fragmentTransaction.remove(foreFragment);
-		// fragmentTransaction.add(R.id.LinearLayout1, newFragment);
-		// }
-
-		fragmentTransaction.replace(R.id.testFragment, newFragment);
-		// fragmentTransaction
-		// .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		fragmentTransaction.commit();
 	}
 }

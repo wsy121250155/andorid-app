@@ -34,7 +34,7 @@ public class PostTest extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		out.println("{link success,haha}");
+		out.println("success");
 	}
 
 	/**
@@ -44,20 +44,21 @@ public class PostTest extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("receive post request");
+		// System.out.println("receive post request");
 		// String[] strArray = { "head", "body", "tail" };
 		// JSONArray jsonArray = JSONArray.fromObject(strArray);
-		String name=request.getParameter("name");
-		String pw=request.getParameter("pw");
-		System.out.println("name: "+name+"; pw: "+pw);
-		
+		// String name = request.getParameter("name");
+		// String pw = request.getParameter("pw");
+		// System.out.println("name: " + name + "; pw: " + pw);
+
 		PrintWriter out = response.getWriter();
-		
-//		String str = "{\"chinese\":\"88\",\"math\":\"78\",\"computer\":\"99\"}";
-//		JSONObject jsonObject = JSONObject.fromObject(str);
-//		out.println(jsonObject.toString());
-		String[] object={"chinese","math"};
-		JSONArray jsonArray=JSONArray.fromObject(object);
+
+		// String str =
+		// "{\"chinese\":\"88\",\"math\":\"78\",\"computer\":\"99\"}";
+		// JSONObject jsonObject = JSONObject.fromObject(str);
+		// out.println(jsonObject.toString());
+		String[] object = { "chinese", "math" };
+		JSONArray jsonArray = JSONArray.fromObject(object);
 		out.println(jsonArray.toString());
 	}
 }

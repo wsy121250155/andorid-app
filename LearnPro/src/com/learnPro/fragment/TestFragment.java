@@ -16,17 +16,21 @@ public class TestFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 	}
 
 	private int count = 0;
 	private TextView textView1;
+	View rootView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle saveInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_test, container,
-				false);
+		if( null == rootView){
+			rootView = inflater.inflate(R.layout.fragment_test, container,
+					false);
+		}
+		 
+
 		// attention:fragment 中获得组件，要靠rootView获取
 		Button bu = (Button) rootView.findViewById(R.id.bu);
 		textView1 = (TextView) rootView.findViewById(R.id.textView1);

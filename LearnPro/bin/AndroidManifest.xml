@@ -23,20 +23,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.learnPro.activity.OtherActivity"
+            android:name="com.learnPro.activity.JumpListActivity"
             android:label="@string/title_activity_other" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.FirstActivity"
+            android:name="com.learnPro.activity.JumpFirstActivity"
             android:label="@string/title_activity_first" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.SecondActivity"
+            android:name="com.learnPro.activity.JumpSecondActivity"
             android:label="@string/title_activity_second" >
         </activity>
         <activity
             android:name="com.learnPro.activity.TestFragmentActivity"
             android:label="@string/title_activity_test_fragment" >
+        </activity>
+        <activity
+            android:name="com.learnPro.activity.ImgActivity"
+            android:label="@string/title_activity_img" >
+        </activity>
+        <activity
+            android:name="com.learnPro.activity.ImgTransActivity"
+            android:label="@string/title_activity_trans_img" >
+        </activity>
+        <activity
+            android:name="com.learnPro.activity.ImgListTransActivity"
+            android:label="@string/title_activity_img_list_trans" >
         </activity>
     </application>
 

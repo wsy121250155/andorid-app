@@ -14,5 +14,8 @@
     <string name="fragment_str1">hehe</string>
     <string name="fragment_str2">haha</string>
     <string name="title_activity_test_fragment">TestFragmentActivity</string>
+    <string name="title_activity_img">ImgActivity</string>
+    <string name="title_activity_trans_img">TransImgActivity</string>
+    <string name="title_activity_img_list_trans">ImgListTransActivity</string>
 
 </resources>

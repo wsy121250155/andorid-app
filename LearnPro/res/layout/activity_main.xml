@@ -27,16 +27,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/otherActivityName" />
-    <fragment
-        android:name="com.learnPro.fragment.TestFragment"
-        android:id="@+id/testFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />
+
+    <Button
+        android:id="@+id/imgBu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ImgActivity" />
+
+    <Button
+        android:id="@+id/transImgBu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="transImg" />
+
+    <Button
+        android:id="@+id/img_list_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="img_list_trans" />
 
 </LinearLayout>

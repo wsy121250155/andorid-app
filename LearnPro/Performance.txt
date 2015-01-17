@@ -1,0 +1,33 @@
+解决思路：
+首先，真正在listview中显示的也就那几个项，所以从项的角度入手可以重用convertView
+其次，从项中的组件的角度入手，组件真正需要保留的项目，最小可以只有显示的数量那么多
+
+如果涉及网络延迟等，可以使用缓存来改善性能
+窗口式缓存：使用mod运算来实现，处以粒度之后mod3（前一个，现在的，后一个）！！！！！！！！！！！！！！！！！！！！！
+******************************************************************************
+listView 中展示的列表项组件级别的复用：
+public View getView(int position, View convertView, ViewGroup parent) {
+	ImageView imageView;
+	if (null == convertView) {
+		imageView = new ImageView(ImgListTransActivity.this);
+	} else {
+		// 否则表示可以复用convertView
+		imageView = (ImageView) convertView;
+	}
+	imageView.setImageBitmap(bitmaps.get(position));
+	return imageView;
+}
+******************************************************************************
+对于图片的释放，不能依靠jvm的内存回收机制，必须要靠如下代码：
+BitmapDrawable bitmapDrawable = (BitmapDrawable) image
+						.getDrawable();
+if (bitmapDrawable != null
+		&& bitmapDrawable.getBitmap().isRecycled()) {
+	bitmapDrawable.getBitmap().recycle();
+}
+******************************************************************************
+listview中的view可以通过convertview来实现复用
+真正需要进行资源数量控制的是view中的组件，比如实验例子中的bitmap
+******************************************************************************
+对于需要缓存的数据的初始化加载过程，如果时间过长，可以先使用一个圆形进度条过度一下， 比如一下要加载10张图片
+（由于缓存策略）。

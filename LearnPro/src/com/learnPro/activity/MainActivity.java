@@ -40,22 +40,56 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Button button = (Button) findViewById(R.id.bt);
+		Button bt = (Button) findViewById(R.id.bt);
 		text = (TextView) findViewById(R.id.textView);
-		Button otherButton=(Button)findViewById(R.id.otherButton);
-		Button button1=(Button)findViewById(R.id.button1);
-		
-		button1.setOnClickListener(new OnClickListener() {
-			
+		Button otherButton = (Button) findViewById(R.id.otherButton);
+		Button button1 = (Button) findViewById(R.id.button1);
+		Button imgBu = (Button) findViewById(R.id.imgBu);
+		Button transImgBu = (Button) findViewById(R.id.transImgBu);
+		Button img_list_trans = (Button) findViewById(R.id.img_list_trans);
+
+		img_list_trans.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(MainActivity.this, TestFragmentActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						ImgListTransActivity.class);
+				startActivity(intent);
+			}
+		});
+		transImgBu.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,
+						ImgTransActivity.class);
+				startActivity(intent);
+			}
+		});
+		imgBu.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this, ImgActivity.class);
 				startActivity(intent);
 			}
 		});
 
-		button.setOnClickListener(new OnClickListener() {
+		button1.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,
+						TestFragmentActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		bt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				PostFun pf = new PostFun();
@@ -68,18 +102,20 @@ public class MainActivity extends ActionBarActivity {
 				}
 			}
 		});
-		
-		otherButton.setOnClickListener(new OnClickListener(){
+
+		otherButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Bundle bundle=new Bundle();
-				bundle.putString("data","hehe");
-				Intent intent=new Intent(MainActivity.this, OtherActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString("data", "hehe");
+				Intent intent = new Intent(MainActivity.this,
+						JumpListActivity.class);
 				intent.putExtras(bundle);
 				startActivity(intent);
-			}});
+			}
+		});
 	}
 
 	class PostFun extends AsyncTask<URL, Integer, String> {
@@ -93,9 +129,9 @@ public class MainActivity extends ActionBarActivity {
 			// "http://10.0.1.103:8080/FM.Android.Server/PostTest");
 			HttpPost post = new HttpPost(
 					"http://10.0.1.103:8080/FM.Android.Server/PostTest");
-			List<NameValuePair> param=new ArrayList<NameValuePair>();
-			param.add(new BasicNameValuePair("name","wsy"));
-			param.add(new BasicNameValuePair("pw","123"));
+			List<NameValuePair> param = new ArrayList<NameValuePair>();
+			param.add(new BasicNameValuePair("name", "wsy"));
+			param.add(new BasicNameValuePair("pw", "123"));
 			try {
 				post.setEntity(new UrlEncodedFormEntity(param, HTTP.UTF_8));
 				HttpResponse response = httpClient.execute(post);
@@ -112,17 +148,6 @@ public class MainActivity extends ActionBarActivity {
 						cont = bf.readLine();
 					}
 					result = str.toString();
-//					try {
-//						JSONObject jsonObject = new JSONObject(result);
-//						String score1 = (String) jsonObject.get("chinese");
-//						String socre2 = (String) jsonObject.get("math");
-//						下面的這兩步實際上等於什麼事都沒做
-//						JSONArray jsonArray=new JSONArray(result);
-//						result = jsonArray.toString();
-//					} catch (JSONException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
 				}
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
@@ -138,7 +163,6 @@ public class MainActivity extends ActionBarActivity {
 		protected void onPostExecute(String result) {
 			text.setText(result);
 		}
-
 	}
 
 	@Override
