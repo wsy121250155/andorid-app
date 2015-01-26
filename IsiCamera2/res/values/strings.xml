@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, IsiCamera2Activity!</string>
+    <string name="app_name">Camera2</string>
+    <string name="str_btn_capture">扫描</string>
+    <string name="str_btn_closeAndSum">结算</string>
+    <string name="title_activity_capture_img">CaptureImg</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
