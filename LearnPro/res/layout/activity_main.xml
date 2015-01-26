@@ -52,4 +52,16 @@
         android:layout_height="wrap_content"
         android:text="img_list_trans" />
 
+    <Button
+        android:id="@+id/uploadImgbu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="uploadImgbu" />
+
+    <Button
+        android:id="@+id/imgshowbu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="imgshowbu" />
+
 </LinearLayout>

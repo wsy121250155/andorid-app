@@ -30,7 +30,6 @@ public class TestFragment extends Fragment {
 					false);
 		}
 		 
-
 		// attention:fragment 中获得组件，要靠rootView获取
 		Button bu = (Button) rootView.findViewById(R.id.bu);
 		textView1 = (TextView) rootView.findViewById(R.id.textView1);

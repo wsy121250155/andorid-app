@@ -21,6 +21,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 
 import com.example.learnpro.R;
+import com.learnPro.data.IPAddress;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -47,7 +48,28 @@ public class MainActivity extends ActionBarActivity {
 		Button imgBu = (Button) findViewById(R.id.imgBu);
 		Button transImgBu = (Button) findViewById(R.id.transImgBu);
 		Button img_list_trans = (Button) findViewById(R.id.img_list_trans);
+		Button uploadImgbu = (Button) findViewById(R.id.uploadImgbu);
+		Button imgshowbu = (Button) findViewById(R.id.imgshowbu);
+		imgshowbu.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,
+						ImgShowActivity.class);
+				startActivity(intent);
+			}
+		});
+		uploadImgbu.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,
+						UploadImgActivity.class);
+				startActivity(intent);
+			}
+		});
 		img_list_trans.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -94,8 +116,7 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				PostFun pf = new PostFun();
 				try {
-					pf.execute(new URL(
-							"http://192.168.115.1:8080/FM.Android.Server/PostTest"));
+					pf.execute(new URL(IPAddress.PATH + "/PostTest"));
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -127,8 +148,7 @@ public class MainActivity extends ActionBarActivity {
 			HttpClient httpClient = new DefaultHttpClient();
 			// HttpGet get = new HttpGet(
 			// "http://10.0.1.103:8080/FM.Android.Server/PostTest");
-			HttpPost post = new HttpPost(
-					"http://10.0.1.103:8080/FM.Android.Server/PostTest");
+			HttpPost post = new HttpPost(IPAddress.PATH + "/PostTest");
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 			param.add(new BasicNameValuePair("name", "wsy"));
 			param.add(new BasicNameValuePair("pw", "123"));

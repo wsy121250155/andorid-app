@@ -69,7 +69,7 @@ public class ImgListTransActivity extends ActionBarActivity {
 		}
 
 		private void showTimes() {
-			MyMemoryInfo.displayBriefMemory(ImgListTransActivity.this);
+			// MyMemoryInfo.displayBriefMemory(ImgListTransActivity.this);
 		}
 
 		@Override

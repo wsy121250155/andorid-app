@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.post.listener.FilsInitListener;
+import com.post.listener.FilesInitListener;
 
 /**
  * Servlet implementation class ImagServlet
@@ -37,12 +37,12 @@ public class ImagServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int i = Integer.valueOf(request.getParameter("no"));
-		if (i >= FilsInitListener.getCount()) {
+		if (i >= FilesInitListener.getCount()) {
 			PrintWriter out = response.getWriter();
 			out.println("fail");
 		}
 
-		File img = FilsInitListener.getFiles(i);
+		File img = FilesInitListener.getFiles(i);
 		if (img.exists()) {
 			// System.out.println(path);
 			@SuppressWarnings("resource")
@@ -69,7 +69,7 @@ public class ImagServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		out.print(FilsInitListener.getCount());
+		out.print(FilesInitListener.getCount());
 	}
 
 }

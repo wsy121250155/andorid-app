@@ -10,7 +10,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.example.learnpro.R;
-import com.learnPro.data.MyMemoryInfo;
+import com.learnPro.data.IPAddress;
+//import com.learnPro.data.MyMemoryInfo;
 
 import android.support.v7.app.ActionBarActivity;
 import android.graphics.Bitmap;
@@ -52,7 +53,7 @@ public class ImgTransActivity extends ActionBarActivity {
 		@Override
 		protected String doInBackground(String... params) {
 			Log.i("wsy", "doInBack");
-			MyMemoryInfo.displayBriefMemory(ImgTransActivity.this);
+			// MyMemoryInfo.displayBriefMemory(ImgTransActivity.this);
 			// TODO Auto-generated method stub
 			// 回收之前的图片
 			if (bitmap != null && !bitmap.isRecycled()) {
@@ -60,8 +61,7 @@ public class ImgTransActivity extends ActionBarActivity {
 				// bitmap.recycle();
 			}
 			HttpClient httpClient = new DefaultHttpClient();
-			HttpGet httpGet = new HttpGet(
-					"http://10.0.1.103:8080/FM.Android.Server/ImagServlet");
+			HttpGet httpGet = new HttpGet(IPAddress.PATH + "/ImagServlet");
 			try {
 				HttpResponse httpResponse = httpClient.execute(httpGet);
 				HttpEntity httpEntity = httpResponse.getEntity();
@@ -84,7 +84,7 @@ public class ImgTransActivity extends ActionBarActivity {
 		@Override
 		protected void onPostExecute(String result) {
 			Log.i("wsy", "post");
-			MyMemoryInfo.displayBriefMemory(ImgTransActivity.this);
+			// MyMemoryInfo.displayBriefMemory(ImgTransActivity.this);
 			if (bitmap != null) {
 				imageView1.setImageBitmap(bitmap);
 			}

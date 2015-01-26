@@ -120,9 +120,8 @@ public class ImgBuffer {
 	}
 
 	public Bitmap pullImg(int count) {
-		HttpGet httpGet = new HttpGet(
-				"http://10.0.1.103:8080/FM.Android.Server/ImagServlet?no="
-						+ count);
+		HttpGet httpGet = new HttpGet(IPAddress.PATH + "/ImagServlet?no="
+				+ count);
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpResponse httpResponse;
 		Bitmap bitmap = null;
@@ -142,8 +141,7 @@ public class ImgBuffer {
 
 	private int pullImgCount() {
 		int no_img = 0;
-		HttpPost httpPost = new HttpPost(
-				"http://10.0.1.103:8080/FM.Android.Server/ImagServlet");
+		HttpPost httpPost = new HttpPost(IPAddress.PATH + "/ImagServlet");
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpResponse httpResponse;
 		try {

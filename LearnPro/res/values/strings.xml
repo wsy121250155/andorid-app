@@ -17,5 +17,8 @@
     <string name="title_activity_img">ImgActivity</string>
     <string name="title_activity_trans_img">TransImgActivity</string>
     <string name="title_activity_img_list_trans">ImgListTransActivity</string>
+    <string name="title_activity_upload_img">UploadImgActivity</string>
+    <string name="title_activity_img_show">ImgShowActivity</string>
+    <string name="title_activity_local_file">LocalFileActivity</string>
 
 </resources>
