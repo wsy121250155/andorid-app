@@ -1,0 +1,10 @@
+@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			//layoutinflater将xml文件中定义的组件资源渲染成view对象
+			ListView listView = (ListView) LayoutInflater
+					.from(activity)
+					.inflate(R.layout.sample_list_detail_list, container, false);
+			listView.setAdapter(adapter);
+			return listView;
+		}

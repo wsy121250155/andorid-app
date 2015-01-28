@@ -1,0 +1,44 @@
+1.Volley特别适合数据量不大但是通信频繁的场景
+
+2.一些场景：
+1）ListView的时候，我们滚动过快，可能导致有些网络请求返回的时候，早已经滚过了当时的位置，根本没必要显示在list里了
+2）通过ViewHolder来保持url等来实现防止两次取得，但是那些已经没有必须要的数据，还是会浪费系统的各种资源
+
+3.功能
+1）JSON，图像等的异步下载
+2）网络请求的排序（scheduling）
+3）网络请求的优先级处理——预计会有优先级
+4）缓存——策略尚不明
+5）多级别取消请求——*
+6）和Activity和生命周期的联动（Activity结束时同时取消所有网络请求）
+
+4.一个小例子：
+ //创建新的请求队列
+mQueue = Volley.newRequestQueue(getApplicationContext()); 
+//添加新的请求，请求类型为jsonObjectRequest
+/*
+*method.get:请求的方法
+*URL：请求的URL
+*null：不知
+*new Listener（）：监听器（使用监听器实现异步处理）
+*/
+mQueue.add(new JsonObjectRequest(Method.GET, url, null,  	
+            new Listener() {  
+                @Override  
+                public void onResponse(JSONObject response) {  
+                    Log.d(TAG, "response : " + response.toString());  
+                }  
+            }, null));  
+mQueue.start();
+
+另一个小例子：
+// imageView：一个ImageView实例  
+// android.R.drawable.ic_menu_rotate：默认的图片resource id  
+//  android.R.drawable.ic_delete：请求失败时候的资源id，可以指定为0  
+ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);  
+mImageLoader.get(url, listener);
+ImageLoader的方法都需要从主线程里来调用。
+
+例子小结：都是使用监听来实现异步网络请求处理
+
+NetworkImageView：被从父控件detach的时候，会自动取消网络请求的，即完全不用我们担心相关网络请求的生命周期问题

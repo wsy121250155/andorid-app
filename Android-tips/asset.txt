@@ -1,0 +1,10 @@
+assets目录下回默认地生成images、sounds、webkit三个子目录
+
+AssetManager assets = getAssets();
+String[] paths=assets.list("");
+InputStream is=null;
+is=assets.open(paths[i]);
+bitmap=BitmapFactory.decodeStream(is);
+
+assets是无法直接获得文件的相对于整个应用的路径的，并且也无法直接获得File对象
+因为通常assets中的内容都是随着程序打包进安装包的，一般都是直接获取内容。

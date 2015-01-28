@@ -1,0 +1,12 @@
+关于相机
+1.照片尺寸
+2.预览尺寸
+两者都是有系统设置的可选分辨率的（这个集合随着机型不同而不同）
+
+但是预览又有所不同，
+可以在surfaceView中是可以设置预览的显示的。
+mSurfaceHolder.setFixedSize(500, 500);
+同时也是可以在布局文件中设置的
+
+surfaceView 相機預覽的問題
+可以用framelayout作為主layout，然後和surfaceview同級再添加一個layout來放其他內容

@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.learnPro.activity.MainActivity"
+            android:name="com.example.learnpro.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,39 +26,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.learnPro.activity.JumpListActivity"
-            android:label="@string/title_activity_other" >
+            android:name="ccom.example.learnpro.JumpListActivity"
+            android:label="@string/title_activity_other">
         </activity>
         <activity
-            android:name="com.learnPro.activity.JumpFirstActivity"
+            android:name="cocom.example.learnpro.JumpFirstActivity"
             android:label="@string/title_activity_first" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.JumpSecondActivity"
-            android:label="@string/title_activity_second" >
+            android:name="comcom.example.learnpro.JumpSecondActivity"            android:label="@string/title_activity_second" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.TestFragmentActivity"
-            android:label="@string/title_activity_test_fragment" >
+            android:name="com.com.example.learnpro.TestFragmentActivity"           android:label="@string/title_activity_test_fragment" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.ImgActivity"
-            android:label="@string/title_activity_img" >
+            android:name="com.lcom.example.learnpro.ImgActivity"          android:label="@string/title_activity_img" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.ImgTransActivity"
+            android:name="ccom.example.learnpro.ImgTransActivity"
             android:label="@string/title_activity_trans_img" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.ImgListTransActivity"
+            android:name="com.example.learnpro.ImgListTransActivity"
             android:label="@string/title_activity_img_list_trans" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.UploadImgActivity"
-            android:label="@string/title_activity_upload_img" >
+            android:name="com.com.example.learnpro.UploadImgActivity"           android:label="@string/title_activity_upload_img" >
         </activity>
         <activity
-            android:name="com.learnPro.activity.ImgShowActivity"
+            android:name="com.example.learnpro.ImgShowActivity"
             android:label="@string/title_activity_img_show" >
         </activity>
         <activity

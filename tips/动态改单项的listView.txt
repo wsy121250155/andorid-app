@@ -1,0 +1,3 @@
+调用adapter的notifydatasetchanged方法，会重新调用adapter的getView方法。
+
+具体见changinglistview项目

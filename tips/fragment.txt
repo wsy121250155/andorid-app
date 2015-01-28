@@ -1,0 +1,7 @@
+fragment 和activity 和 getFragmentmanager 整个又两套系统，要完全对应
+
+替换：
+fragmentTransaction.add(R.id.LinearLayout1, newFragment);是有用的，会在layout后面加上一个
+fragment；
+但是fragmentTransaction.remove(foreFragment);就完全没有移除。
+注意：这里R.id.linearLayout1错了，替换的应该是一个fragment或者framelayout（通常情况下直接全部使用framelayout用于初始化然后后续的动作全是替换它）

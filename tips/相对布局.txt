@@ -1,0 +1,2 @@
+android:layout_above="@+id/bottomBar"
+在该组件下方声明的组件需要加上一个加号，前面的不要。

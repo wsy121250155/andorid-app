@@ -1,0 +1,12 @@
+如果在一个Activity里面启动了网络请求，而在这个网络请求还没返回结果的时候，如果Activity被结束了，则我们需要写如下代码作为防守：
+
+[java] view plaincopy在CODE上查看代码片派生到我的代码片
+
+    @Override public void onPostExecute(Result r) {  
+        if (getActivity() == null) {  
+            return;  
+        }  
+        // ...  
+    }
+but：
+使用Volley的话，我们可以在Activity停止的时候，同时取消所有或部分未完成的网络请求。

@@ -1,0 +1,2 @@
+add();replace()
+framelayout可以放置fragment，第一个参数均为framelayout的id

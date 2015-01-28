@@ -46,8 +46,17 @@ public class FilesInitListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent arg0) {
 		// TODO Auto-generated method stub
 		ServletContext context = arg0.getServletContext();
-		String root = context.getRealPath("/") + "picture\\";
+		String root = context.getRealPath("/") + "/picture";
 		File dirFile = new File(root);
+		if (!dirFile.isDirectory()) {
+			try {
+				throw new Exception();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println(root);
+			}
+		}
 		files = dirFile.listFiles();
 	}
 

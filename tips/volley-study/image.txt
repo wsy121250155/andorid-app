@@ -1,0 +1,20 @@
+1.ImageView：
+// imageView是一个ImageView实例  
+// ImageLoader.getImageListener的第二个参数是默认的图片resource id  
+// 第三个参数是请求失败时候的资源id，可以指定为0  
+ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);  
+mImageLoader.get(url, listener);
+ImageLoader的方法都需要从主线程里来调用。
+ps：此处使用默认的request（直接使用一个URL），然后加上listener
+
+2.NetworkImageView（volley）
+mImageView.setImageUrl(url, imageLoader)
+
+    mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache());  
+    ... ...  
+    if(holder.imageRequest != null) {  
+        holder.imageRequest.cancel();  
+    }  
+    holder.imageRequest = mImageLoader.get(BASE_UR + item.image_url, holder.imageView, R.drawable.loading, R.drawable.error);  
+ImageCache：并不主动拿图片，只负责缓存中的替换更新问题，是一个被动的接口，并不主动从后台获取图片或者说提前加载可能用到的图片【public void putBitmap(String url, Bitmap bitmap); 】
+

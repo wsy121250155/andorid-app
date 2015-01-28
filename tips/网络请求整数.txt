@@ -1,0 +1,2 @@
+ int bufferedReader。read（）返回的是ascII的值，想读出int的原值，必须使用
+Integer.valueOf(bf.readLine())

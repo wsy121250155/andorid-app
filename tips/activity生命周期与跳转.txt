@@ -1,0 +1,3 @@
+activity.startActivity(new Intent(activity, activityClass));
+activity.finish();
+在调用了activity的startActivity或者其他的界面跳转指令之后，调用finish（）方法，会使activity从栈中被销毁

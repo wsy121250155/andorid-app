@@ -1,0 +1,3 @@
+holder.image = (ImageView) view.findViewById(R.id.photo);
+holder.text = (TextView) view.findViewById(R.id.url);
+在一个布局文件中定义的组件，可以多次使用，如listView中，每次都用同一个也是可以的。

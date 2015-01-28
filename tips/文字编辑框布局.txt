@@ -1,0 +1,5 @@
+ android:maxLength="10":限制字数
+ android:maxLines="1"：限制行数
+ <EditText ><requestFocus /></EditText>：初始焦点所在
+ android:gravity="top":editText中的文字靠着上边显示
+ android:layout_gravity="center"是对textview控件在整个布局中居中

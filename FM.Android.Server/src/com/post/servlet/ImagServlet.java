@@ -37,6 +37,7 @@ public class ImagServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int i = Integer.valueOf(request.getParameter("no"));
+		System.out.println("ImageServlet request: " + i);
 		if (i >= FilesInitListener.getCount()) {
 			PrintWriter out = response.getWriter();
 			out.println("fail");
@@ -50,11 +51,10 @@ public class ImagServlet extends HttpServlet {
 			ServletOutputStream out = response.getOutputStream();
 			byte buf[] = new byte[512];
 			@SuppressWarnings("unused")
-			int n = 0; // 记录是实际读取到的字节数
+			int n = 0;
 			while ((n = fis.read(buf)) != -1) {
 				out.write(buf);
 			}
-			// System.out.println("success img: " + i);
 		} else {
 			PrintWriter out = response.getWriter();
 			out.println("fail");
